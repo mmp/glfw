@@ -162,8 +162,10 @@ static int choosePixelFormat(_GLFWwindow* window,
             if (findAttribValue(WGL_PIXEL_TYPE_ARB) != WGL_TYPE_RGBA_ARB)
                 continue;
 
+            /*
             if (findAttribValue(WGL_ACCELERATION_ARB) == WGL_NO_ACCELERATION_ARB)
                 continue;
+            */
 
             if (findAttribValue(WGL_DOUBLE_BUFFER_ARB) != fbconfig->doublebuffer)
                 continue;
@@ -231,11 +233,13 @@ static int choosePixelFormat(_GLFWwindow* window,
                 continue;
             }
 
+            /*
             if (!(pfd.dwFlags & PFD_GENERIC_ACCELERATED) &&
                 (pfd.dwFlags & PFD_GENERIC_FORMAT))
             {
                 continue;
             }
+            */
 
             if (pfd.iPixelType != PFD_TYPE_RGBA)
                 continue;
